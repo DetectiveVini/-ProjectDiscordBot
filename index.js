@@ -16,7 +16,24 @@ myllena.on('message' , async message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    
+
+    if(cmd === `${prefix}serverinfo`){
+        let sicon = message.guild.displayAvatarURL;
+        let serverembed = new Discord.RichEmbed()
+            .setDescription('**INFORMAÇÃO DO SERVER**')
+            .setColor("#42f450")
+            .setThumbnail(sicon)
+            .addField("Nome do Server" , message.guild.name)
+            .addField("Criado em " , message.guild.createdAt)
+            .addField("Você entrou em" , message.member.joinedAt)
+            .addField("Total de membros" , message.guild.memberCount)
+        
+        return message.channel.sendMessage(serverembed);
+    }    
+
+
+
+
     //m! say hello
     if(cmd === `${prefix}hello`){
         return message.channel.send("hello!")
@@ -28,7 +45,9 @@ myllena.on('message' , async message =>{
             .setDescription("**BOT INFO**")
             .setColor("#42f450")
             .setThumbnail(bicon)
-            .addField("Bot Name" , myllena.user.username);
+            .addField("Bot Name" , myllena.user.username)
+            .addField("Criado Em" , myllena.user.createdAt)
+            
             
      return message.channel.send(botinfo);   
     }  
