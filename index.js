@@ -23,7 +23,7 @@ myllena.on('message' , async message =>{
     }
     if(cmd === `${prefix}botinfo`){
 
-        let bicon = myllena.user.iconURL;
+        let bicon = myllena.user.displayAvatarURL;
         let botinfo = new Discord.RichEmbed()
             .setDescription("**BOT INFO**")
             .setColor("#42f450")
