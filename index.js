@@ -18,7 +18,7 @@ myllena.on('message' , async message =>{
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}serverinfo`){
-        let sicon = message.guild.displayAvatarURL;
+        let sicon = message.guild.iconURL;
         let serverembed = new Discord.RichEmbed()
             .setDescription('**INFORMAÇÃO DO SERVER**')
             .setColor("#42f450")
