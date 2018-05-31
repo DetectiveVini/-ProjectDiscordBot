@@ -5,7 +5,8 @@ const myllena = new Discord.Client({disableEveryone: true});
 
 myllena.on('ready' , async () =>{
     console.log(`${myllena.user.username} está online!`)
-    myllena.user.setGame('No Visual Studio Code')
+    myllena.user.setActivity("Nada", {type: "WATCHING"})
+    //myllena.user.setGame('No Visual Studio Code')
 })
 
 myllena.on('message' , async message =>{
@@ -16,6 +17,21 @@ myllena.on('message' , async message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
+    if(cmd === `${prefix}report`){
+        //m!report  @user this is the reason
+        let rUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
+            if(!rUser)  return message.channel.send("Não consigo encontrar o Usuario")
+        let reason = args.join(" ").slice(22);
+        let reportEmbed = new Discord.RichEmbed()
+            .setDescription("")
+            .setColor("#42f450")
+
+        return;
+    }
+
+
+
 
     if(cmd === `${prefix}serverinfo`){
         let sicon = message.guild.iconURL;
@@ -30,10 +46,6 @@ myllena.on('message' , async message =>{
         
         return message.channel.sendMessage(serverembed);
     }    
-
-
-
-
     //m! say hello
     if(cmd === `${prefix}hello`){
         return message.channel.send("hello!")
