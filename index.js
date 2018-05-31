@@ -4,7 +4,7 @@ const myllena = new Discord.Client({disableEveryone: true});
 
 
 myllena.on('ready' , async () =>{
-    console.log(`${myllena.user.username} is online!`)
+    console.log(`${myllena.user.username} está online!`)
     myllena.user.setGame('No Visual Studio Code')
 })
 
@@ -21,8 +21,20 @@ myllena.on('message' , async message =>{
     if(cmd === `${prefix}hello`){
         return message.channel.send("hello!")
     }
+    if(cmd === `${prefix}botinfo`){
 
-    
+        let botinfo = new Discord.RichEmbed()
+            .setDescription("**BOT INFO**")
+            .setColor("#42f450")
+            .addField("Bot Name" , myllena.user.username);
+
+
+
+
+
+
+     return botinfo;   
+    }  
 })
 
 myllena.login(process.env.BOT_TOKEN);
