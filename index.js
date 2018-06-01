@@ -38,7 +38,9 @@ myllena.on('message' , async message =>{
             .setColor("#42f450")
             .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`);
 
-        return message.channel.sendMessage(ReportEmbed);
+    
+        message.channel.sendMessage(ReportEmbed);
+        return;
     }
     if(cmd === `${prefix}serverinfo`){//Serverinfo
         let sicon = message.guild.iconURL;
