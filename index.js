@@ -22,7 +22,7 @@ myllena.on('message' , async message =>{
         let PingEmbed = new Discord.RichEmbed() 
         .settitle('Ping :GWvictoriaBlobNomPing:')
         .setDescription('Meu ping é  `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
-        .setColor("#42f450")
+        .setColor("#42f450");
 
        
         message.channel.sendMessage(PingEmbed);
