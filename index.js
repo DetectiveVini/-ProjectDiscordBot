@@ -18,22 +18,29 @@ myllena.on('message' , async message =>{
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+    if(cmd === `${prefix}ping`){
+        let PingEmbed = new Discord.RichEmbed() 
+        .title('Ping :GWvictoriaBlobNomPing:')
+        .setDescription('Meu ping é  `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
+        .setColor("#42f450")
+
+        return message.channel.sendMessage(PingEmbed);
+    }
+
     if(cmd === `${prefix}report`){
-        //m!report  @user this is the reason
+        //m!report  @user por está ...
         let rUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
             if(!rUser)  return message.channel.send("Não consigo encontrar o Usuario")
         let reason = args.join(" ").slice(22);
-        let reportEmbed = new Discord.RichEmbed()
-            .setDescription("")
+
+        let ReportEmbed = new Discord.RichEmbed()
+            .setDescription("Report")
             .setColor("#42f450")
+            .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`);
 
-        return;
+        return message.channel.sendMessage(ReportEmbed);
     }
-
-
-
-
-    if(cmd === `${prefix}serverinfo`){
+    if(cmd === `${prefix}serverinfo`){//Serverinfo
         let sicon = message.guild.iconURL;
         let serverembed = new Discord.RichEmbed()
             .setDescription('**INFORMAÇÃO DO SERVER**')
