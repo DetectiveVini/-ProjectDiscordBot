@@ -20,11 +20,13 @@ myllena.on('message' , async message =>{
 
     if(cmd === `${prefix}ping`){
         let PingEmbed = new Discord.RichEmbed() 
-        .title('Ping :GWvictoriaBlobNomPing:')
+        .settitle('Ping :GWvictoriaBlobNomPing:')
         .setDescription('Meu ping é  `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
         .setColor("#42f450")
 
-        return message.channel.sendMessage(PingEmbed);
+       
+        message.channel.sendMessage(PingEmbed);
+        return;
     }
 
     if(cmd === `${prefix}report`){
