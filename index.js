@@ -1,40 +1,46 @@
-const Discord = require("discord.js");
-const fs = require("fs");
-const myllena = new Discord.Client({disableEveryone: true});
-myllena.commands = new Discord.Collection();
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const config = require('./config.json')
+const fs = require('fs')//Modulo 
 
-if(err) console.log(err);
-  
-let jsfile = files.filter(f => f.split(".").pop() === "js")
-if(jsfile.length <= 0){
-  console.log("Não encontro o arquivo deste comando");
-  return;
-}
+client.on('ready', () => {
+  console.log('Inicializado com sucesso');
+});
 
-jsfile.forEach((f, i) =>{
-  let props = require(`./commands/${f}`);
-  console.log(`${f} loaded!`);
-  myllena.commands.set(props.help.name, props);
+client.on('channelCreate', console.log)//CanalCriado
+client.on('channelDelete' ,console.log)//CanalDeletado
+//
+client.on('guildCreate' , console.log)//Entrou no server
+client.on('guildDelete', console.log)//Saiu do server
+
+
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    let eventFunction = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+client.on(eventName, (...args) => eventFunction.run(client, ...args));
+  });
+});
+
+client.on("message", message => {
+
+  if(!message.guild) return;
+  if (message.author.bot) return;
+  if (!message.content.startsWith(config.prefix)) return;
+//Anti-Comando errado
+
+let command = message.content.split(" ")[0];
+command = command.slice(config.prefix.length);
+//
+let args = message.content.split(" ").slice(1);
+// 
+try {
+    let commandFile = require(`./commands/${command}.js`);//Importando os comandos da pasta commands
+    commandFile.run(client, message, args);
+  } catch (err) {
+    console.error(err);
+  }
 })
 
-
-myllena.on('ready' , async () =>{
-    console.log(`${myllena.user.username} está online!`)
-    myllena.user.setActivity("Nada", {type: "WATCHING"})
-    //myllena.user.setGame('No Visual Studio Code')
-})
-
-myllena.on('message' , async message =>{
-        if(message.author.bot) return;
-        if(message.channel.type === 'dm') return;
-
-    let prefix = config.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let commandfile = myllena.commands.get(cmd.slice(prefix.length));
-        if(commandfile) commandfile.run(myllena,message,args);
-
-})
-
-myllena.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
