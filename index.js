@@ -44,12 +44,12 @@ myllena.on('message' , async message =>{
             .addField("Tempo" , message.createdAt)
             .addField("Razão" , reason);
 
-        let reportsChannel = message.guild.channels.find('name' , 'reports')
-        if(!reportsChannel) return message.channel.sendMessage('Não consigo encontrar um canal de Report')
+        let reportsChannel = message.guild.channels.find(`name` , 'reports');
+        if(!reportsChannel) return message.channel.sendMessage('Não consigo encontrar um canal de Report');
         
 
-            message.delete().catch(O_o =>{})
-            reportsChannel.send(reportsChannel)
+            message.delete().catch(O_o =>{});
+            reportsChannel.send(reportsChannel);
 
         return;
     }
