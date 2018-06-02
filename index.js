@@ -25,9 +25,6 @@ myllena.on('message' , async message =>{
             .setDescription('Meu ping é:' + `${Date.now() - message.createdTimestamp}`+ 'ms')//comando para latencia do bot
             .setTimestamp(new Date())
             //Fim do embed
-    
-
-       
         message.channel.sendMessage(PingEmbed);
         return;
     }
@@ -41,10 +38,19 @@ myllena.on('message' , async message =>{
         let ReportEmbed = new Discord.RichEmbed()
             .setDescription("Report")
             .setColor("#42f450")
-            .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`);
+            .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`)
+            .addField("Reportado por" , `${message.author} com o ID: ${message.author.id}`)
+            .addField("Canal" , message.channel)
+            .addField("Tempo" , message.createdAt)
+            .addField("Razão" , reason);
 
-    
-        message.channel.sendMessage(ReportEmbed);
+        let reportsChannel = message.guild.channels.find('name' , 'reports')
+        if(!reportsChannel) return message.channel.sendMessage('Não consigo encontrar um canal de Report')
+        
+
+            message.delete().catch(O_o =>{})
+            reportsChannel.send(reportsChannel)
+
         return;
     }
     if(cmd === `${prefix}serverinfo`){//Serverinfo
