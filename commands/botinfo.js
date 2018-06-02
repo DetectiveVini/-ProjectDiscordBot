@@ -8,4 +8,5 @@ exports.run = (client , message , args) =>{
         .setThumbnail(bicon)
         .addField("Bot Name" , myllena.user.username)
         .addField("Criado Em" , myllena.user.createdAt)
+    return message.channel.sendMessage(botinfo);
 }
