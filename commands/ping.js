@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (myllena , message , args) =>{
-
+exports.run =  (client , message , args) =>{
+    const Discord = require('discord.js');
     let PingEmbed = new Discord.RichEmbed()
             .setColor('#4b42f4')
             .setTitle('Ping :ping_pong:')
@@ -13,6 +13,3 @@ module.exports.run = async (myllena , message , args) =>{
 
 }
 
-module.exports.help = {
-    name: 'ping'
-}

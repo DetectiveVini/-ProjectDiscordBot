@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (myllena , message , args) =>{
+exports.run =  (client , message , args) =>{
+    const Discord = require('discord.js');
     //m!report  @user por está ...
     let rUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
     if(!rUser)  return message.channel.send("Não consigo encontrar o Usuario")
@@ -24,6 +25,4 @@ module.exports.run = async (myllena , message , args) =>{
         reportsChannel.send(ReportEmbed);//Todos os Reports irão para qualquer canal chamado reports
     return;
 }
-module.exports.help = {
-    name: 'report'
-}
+  

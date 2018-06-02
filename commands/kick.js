@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (myllena , message , args) =>{
+exports.run =  (client , message , args) =>{
+    const Discord = require('discord.js');
     //m!kick @user reason
 let PermissaoKickReturn = new Discord.RichEmbed()
     .setColor('#4b42f4')
@@ -19,7 +20,4 @@ let KickForUser = new Discord.RichEmbed()
     PrimeiraMention.kick(KickForUser);
     return;
     
-}
-module.exports.help = {
-    name: 'kick'
 }

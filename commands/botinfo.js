@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
-module.exports.run = async(myllena , message , args) =>{
+exports.run = (client , message , args) =>{
+    const Discord = require('discord.js');
     let bicon = myllena.user.displayAvatarURL;
     let botinfo = new Discord.RichEmbed()
         .setDescription("**BOT INFO**")
@@ -7,7 +8,4 @@ module.exports.run = async(myllena , message , args) =>{
         .setThumbnail(bicon)
         .addField("Bot Name" , myllena.user.username)
         .addField("Criado Em" , myllena.user.createdAt)
-}
-module.exports.help = {
-    name:'bot info'
 }

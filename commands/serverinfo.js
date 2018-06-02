@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async(myllena , message , args) =>{
+exports.run = (client , message , args) =>{
+    const Discord = require('discord.js');
     let sicon = message.guild.iconURL;
         let serverembed = new Discord.RichEmbed()
             .setDescription('**INFORMAÇÃO DO SERVER**')
@@ -15,6 +16,3 @@ module.exports.run = async(myllena , message , args) =>{
 
 }
 
-module.exports.help = {
-    name: 'serverinfo'
-}
