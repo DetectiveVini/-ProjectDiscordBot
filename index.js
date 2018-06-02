@@ -49,7 +49,7 @@ myllena.on('message' , async message =>{
         
 
             message.delete().catch(O_o =>{});
-            reportsChannel.send(reportsChannel);
+            reportsChannel.send(ReportEmbed);
 
         return;
     }
