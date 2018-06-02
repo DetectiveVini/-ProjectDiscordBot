@@ -18,6 +18,29 @@ myllena.on('message' , async message =>{
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
+    if(cmd === `${prefix}kick`){
+        //m!kick @user reason
+            let kUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
+                if(!kUser) return message.channel.sendMessage("Não consigo encontrar o usuario");
+            let kReason = args.join(" ").slice(22);
+
+            let kickEmbed = new Discord.RichEmbed()
+                .setDescription("Kick")
+                .setColor('#4b42f4')
+                .addField("Usuario Kikado" , `${kUser} Com o ID ${kUser.id}`)
+                .addField("Kikado por" , `<@${message.author.id}> com o ID ${message.author.id}`)
+                .addField("Time", message.createdAt)
+                .addField("Razão" , kReason)
+
+
+                let kickChannel = message.guild.channels.find(`name` , 'report');
+                    if(!kickChannel) return message.channel.sendMessage("Não consigo encontrar o canal");
+
+                    kickChannel.send(kickEmbed);
+                    return;
+    }
+
+
     if(cmd === `${prefix}ping`){
         var PingEmbed = new Discord.RichEmbed()
             .setColor('#4b42f4')
@@ -28,20 +51,19 @@ myllena.on('message' , async message =>{
         message.channel.sendMessage(PingEmbed);
         return;
     }
-
-    if(cmd === `${prefix}report`){
+    if(cmd === `${prefix}report`){""
         //m!report  @user por está ...
         let rUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
             if(!rUser)  return message.channel.send("Não consigo encontrar o Usuario")
-        let reason = args.join(" ").slice(22);
+        let reason = args.join(" ").slice(22);//Razão do report
 
         let ReportEmbed = new Discord.RichEmbed()
             .setDescription("Report")
             .setColor("#42f450")
-            .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`)
-            .addField("Reportado por" , `${message.author} com o ID: ${message.author.id}`)
-            .addField("Canal" , message.channel)
-            .addField("Tempo" , message.createdAt)
+            .addField("Usuario Reportado", `${rUser} com o ID ${rUser.id}`)//O usuario reportado e o ID dele
+            .addField("Reportado por" , `${message.author} com o ID: ${message.author.id}`)//O autor da mensagem e o ID dele
+            .addField("Canal" , message.channel)//O canal que a mensagem foi criada
+            .addField("Tempo" , message.createdAt)//Quando a mensagem foi criada
             .addField("Razão" , reason);
 
         let reportsChannel = message.guild.channels.find(`name` , 'reports');
