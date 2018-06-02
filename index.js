@@ -20,27 +20,22 @@ myllena.on('message' , async message =>{
 
     if(cmd === `${prefix}kick`){
         //m!kick @user reason
-            let kUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
-                if(!kUser) return message.channel.sendMessage("Não consigo encontrar o usuario");
-            let kReason = args.join(" ").slice(22);
-            if(!message.member.hasPermission('MANEGE_MESSAGES', "ADMINISTRATOR"))return message.channel.send('Não pode fazer isso')
-            if(kUser.hasPermission('MANAGE_MESSAGES', "ADMINISTRATOR")) return message.channel.sendMessage('Aquela pessoa não pode ser kikada')
-
-            let kickEmbed = new Discord.RichEmbed()
-                .setDescription("Kick")
-                .setColor('#4b42f4')
-                .addField("Usuario Kikado" , `${kUser} Com o ID ${kUser.id}`)
-                .addField("Kikado por" , `<@${message.author.id}> com o ID ${message.author.id}`)
-                .addField("Time", message.createdAt)
-                .addField("Razão" , kReason)
-
-
-                let kickChannel = message.guild.channels.find(`name` , 'report');
-                    if(!kickChannel) return message.channel.sendMessage("Não consigo encontrar o canal");
-
-                message.guild.member(kUser).kick(kReason)
-                kickChannel.send(kickEmbed);
-                return;
+    var PermissaoKickReturn = new Discord.RichEmbed()
+        .setColor('#4b42f4')
+        .setDescription('Você não tem permissao para kickar :oncoming_police_car:')
+    var MentionMemberReturn = new Discord.RichEmbed()
+        .setColor('#4b42f4')
+        .setDescription('Uso invalido. Por Favor faça como o seguinte exemplo:`d!kick @user#0000 `')
+    var KickForUser = new Discord.RichEmbed()
+        .setColor('#4b42f4')
+        .setDescription(`Kickado por${message.author.tag}`)
+    //Fim do embed
+    
+        if(!message.member.hasPermission('KICK_MEMBERS', 'ADMINISTRATOR'))/*Verifica se o usuario tem essas permissoes*/ return (message.channel.send(PermissaoKickReturn))
+        const PrimeiraMention = message.mentions.members.first()
+        if(!PrimeiraMention)return (message.channel.send(MentionMemberReturn))
+        PrimeiraMention.kick(KickForUser);
+        return;
     }
     if(cmd === `${prefix}ping`){
         var PingEmbed = new Discord.RichEmbed()
