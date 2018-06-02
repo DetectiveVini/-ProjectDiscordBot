@@ -23,6 +23,8 @@ myllena.on('message' , async message =>{
             let kUser = message.guild.member(message.mentions.users.first()|| message.guild.members.get(args[0]));
                 if(!kUser) return message.channel.sendMessage("Não consigo encontrar o usuario");
             let kReason = args.join(" ").slice(22);
+            if(!message.member.hasPermission('MANEGE_MESSAGES', "ADMINISTRATOR"))return message.channel.send('Não pode fazer isso')
+            if(kUser.hasPermission('MANAGE_MESSAGES', "ADMINISTRATOR")) return message.channel.sendMessage('Aquela pessoa não pode ser kikada')
 
             let kickEmbed = new Discord.RichEmbed()
                 .setDescription("Kick")
@@ -36,11 +38,10 @@ myllena.on('message' , async message =>{
                 let kickChannel = message.guild.channels.find(`name` , 'report');
                     if(!kickChannel) return message.channel.sendMessage("Não consigo encontrar o canal");
 
-                    kickChannel.send(kickEmbed);
-                    return;
+                message.guild.member(kUser).kick(kReason)
+                kickChannel.send(kickEmbed);
+                return;
     }
-
-
     if(cmd === `${prefix}ping`){
         var PingEmbed = new Discord.RichEmbed()
             .setColor('#4b42f4')
