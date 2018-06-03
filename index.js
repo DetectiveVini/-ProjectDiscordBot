@@ -6,6 +6,13 @@ const fs = require('fs')//Modulo
 client.on('ready', () => {
   console.log('Inicializado com sucesso');
 });
+client.on('guildMemberAdd', async member =>{
+  console.log(`${member.id} entrou no server!`);
+
+  let CanalBemVindo = message.guild.channels.find(`name` , 'bemvindo');
+  CanalBemVindo.send(`Bem vindo ${member}!`)
+})
+
 
 client.on('channelCreate', console.log)//CanalCriado
 client.on('channelDelete' ,console.log)//CanalDeletado
