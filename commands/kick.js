@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-
 exports.run =  (client , message , args) =>{
     const Discord = require('discord.js');
     //m!kick @user reason
@@ -15,7 +13,7 @@ let KickForUser = new Discord.RichEmbed()
 
 
     if(!message.member.hasPermission('KICK_MEMBERS', 'ADMINISTRATOR'))//Verifica se o usuario tem essas permissoes return (message.channel.send(PermissaoKickReturn))
-    const PrimeiraMention = message.mentions.members.first()
+    let PrimeiraMention = message.mentions.members.first()
     if(!PrimeiraMention)return (message.channel.send(MentionMemberReturn))
     PrimeiraMention.kick(KickForUser);
     return;
