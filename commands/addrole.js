@@ -14,7 +14,7 @@ exports.run = (client , message , args) =>{
   await(rMember.addRole(gRole.id));
 
   try{
-    await rMember.send(`Parabéns você recebeu o cargo ${gRole.name}`)
+    rMember.send(`Parabéns você recebeu o cargo ${gRole.name}`)
   }catch(e){
     message.channel.send(`Parabéns <@${rMember.id}>, você recebeu o cargo ${gRole.name}.`)
   }
