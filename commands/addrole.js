@@ -2,7 +2,7 @@ exports.run = (client , message , args) =>{
     const Discord = require('discord.js')
 //m!addrole @user role
       //!addrole @andrew Dog Person
-  if(!message.member.hasPermission("MANAGE_MEMBERS", "ADMINISTRATOR","MANAGE ROLES")) return message.reply("Você não pode fazer isso!");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Você não pode fazer isso!");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.reply("Não consigo encontrar o usuario!");
   let role = args.join(" ").slice(22);
