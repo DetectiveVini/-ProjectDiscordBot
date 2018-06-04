@@ -1,5 +1,12 @@
 {   "token":"", 
     "prefix":"m!",
-    "ownerID": "400384915960758280"
+    "ownerID": "400384915960758280",
+    "laranja":"#f75a00",
+    "azul":"#0004f7",
+    "vermelho":"#f70000",
+    "preto":"#000000",
+    "branco":"#ffffff",
+    "amarelo":"#ffe902",
+    "roxo":"#6701ff"
     
 }

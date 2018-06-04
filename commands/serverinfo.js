@@ -1,7 +1,8 @@
-const Discord = require('discord.js');
-
 exports.run = (client , message , args) =>{
+    const config = require('./config.json')
+    const azul = config.azul;//Cor azul do embed
     const Discord = require('discord.js');
+    
     let sicon = message.guild.iconURL;
         let serverembed = new Discord.RichEmbed()
             .setDescription('**INFORMAÇÃO DO SERVER**')

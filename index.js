@@ -14,11 +14,11 @@ client.on('guildMemberAdd', async member =>{
 })
 
 
-client.on('channelCreate', console.log)//CanalCriado
-client.on('channelDelete' ,console.log)//CanalDeletado
+client.on('channelCreate',console.log)//CanalCriado
+client.on('channelDelete',console.log)//CanalDeletado
 //
-client.on('guildCreate' , console.log)//Entrou no server
-client.on('guildDelete', console.log)//Saiu do server
+client.on('guildCreate',console.log)//Entrou no server
+client.on('guildDelete',console.log)//Saiu do server
 
 
 fs.readdir("./events/", (err, files) => {
