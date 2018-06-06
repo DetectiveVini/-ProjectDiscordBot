@@ -1,0 +1,14 @@
+Comandos 
+
+1-Addrole
+2-Avatar
+3-ban
+4-botinfo
+5-criador
+6-hello
+7-help
+8-invite
+9-kick
+10-ping
+11-report
+12-serverinfo
