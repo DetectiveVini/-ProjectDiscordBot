@@ -8,6 +8,6 @@ exports.run = (client , message , args) =>{
         .setThumbnail(bicon)
         .addField("Bot Name" , client.user.username)
         .addField("Criado Em" , client.user.createdAt)
-        
+        .addField('Ping', `${Date.now() - message.createdTimestamp}`);
     return message.channel.sendMessage(botinfo);
 }

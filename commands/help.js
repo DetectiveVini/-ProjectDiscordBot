@@ -6,20 +6,22 @@ exports.run = (client  , message  , args) =>{
     let HelpEmbed = new Discord.RichEmbed()
         .setColor(red)
         .setDescription('Comandos do Bot')
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
-        .addField()
+        .addField('Addrole')
+        .addField('avatar')
+        .addField('ban')
+        .addField('botinfo')
+        .addField('clear')
+        .addField('help')
+        .addField('invite')
+        .addField('kick')
+        .addField('ping')
+        .addField('removerole')
+        .addField('report')
+        .addField('say')
+        .addField('serverinfo')
 
 
-
+    return message.channel.sendMessage(HelpEmbed);
 
 
 }
