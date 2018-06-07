@@ -8,7 +8,9 @@ exports.run = (client  , message  , args) =>{
         .setColor(red)
         .setDescription('Comandos do Bot')
         .addField('Comandos de Administração', ComandosDeAdminitração)
-        .addField('Comandos Comuns' , ComandosComuns);
+        .addField('Comandos Comuns' , ComandosComuns)
+        .addField('Servidores Parceiros' ,'[Avengers Without Souls](https://discord.gg/MnaC3hJ)','[Ayumi - Discord Server!](https://discord.gg/Z2Bf4nB)')
+        .addField('Repositorio Github', '[Myllena](https://github.com/DetectiveVini/Myllena)');
 
 
 

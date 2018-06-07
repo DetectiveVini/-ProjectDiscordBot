@@ -12,7 +12,7 @@ exports.run = async (client , message , args) =>{
     let respostas = ["Sim" , "Não" , "Não sei" , "Pergunte Denovo"];
 
     let resuntado = Math.floor((Math.random()* respostas.length/*Vai multiplicar pela quantidade de respostas*/));
-    let pergunta = args.slice(1).join(" ");
+    let pergunta = args.slice(0).join(" ");
 
     let BallEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag)//Nick do autor da message ou comando
