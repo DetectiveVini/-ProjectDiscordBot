@@ -8,7 +8,7 @@ exports.run = async (client , message , args) =>{
     //args[0] = 8ball
     //args[2] = etc
 
-    if(!args[1]) return message.channel.sendMessage('Pergunte alguma coisa!');
+    if(!args[2]) return message.channel.sendMessage('Pergunte alguma coisa!');
     let respostas = ["Sim" , "Não" , "Não sei" , "Pergunte Denovo"];
 
     let resuntado = Math.floor((Math.random()* respostas.length/*Vai multiplicar pela quantidade de respostas*/));
@@ -17,7 +17,7 @@ exports.run = async (client , message , args) =>{
     let BallEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag)//Nick do autor da message ou comando
         .setColor(azul)
-        .addField("Pergunta" , question)
+        .addField("Pergunta" , pergunta)
         .addField("Resposta" , respostas[resuntado])
 
         message.channel.sendMessage(BallEmbed);
