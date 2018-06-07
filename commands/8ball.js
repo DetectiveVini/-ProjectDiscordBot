@@ -8,7 +8,7 @@ exports.run = async (client , message , args) =>{
     //args[0] = 8ball
     //args[2] = etc
 
-    if(!args[2]) return message.channel.sendMessage('Pergunte alguma coisa!');
+    if(!args[1]) return message.channel.sendMessage('Pergunte alguma coisa!');
     let respostas = ["Sim" , "Não" , "Não sei" , "Pergunte Denovo"];
 
     let resuntado = Math.floor((Math.random()* respostas.length/*Vai multiplicar pela quantidade de respostas*/));
