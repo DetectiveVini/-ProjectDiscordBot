@@ -17,7 +17,7 @@ exports.run = async (client , message , args) =>{
     let BallEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag)//Nick do autor da message ou comando
         .setColor(azul)
-        .addField("Pergunta" , )
+        .addField("Pergunta" ,pergunta)
         .addField("Resposta" , respostas[resuntado])
 
         message.channel.sendMessage(BallEmbed);
