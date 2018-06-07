@@ -12,3 +12,6 @@ Comandos
 10-ping
 11-report
 12-serverinfo
+13-removerole
+14-say
+15-clean
