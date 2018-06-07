@@ -1,6 +1,6 @@
 exports.run = (client ,message , args) =>{
     const Discord = require('discord.js');
-    const superagent = requrie('superagent');
+    const superagent = require('superagent');
     const config = require('../config.json');
     const roxo = config.roxo;
 
