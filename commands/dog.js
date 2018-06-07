@@ -10,7 +10,7 @@ exports.run = async (client ,message , args) =>{
     let DogEmbed = new Discord.RichEmbed()
         .setColor(roxo)
         .setTitle('DOGGO')
-        .setImage(body.url);
+        .setImage(body);
 
         message.channel.sendMessage(DogEmbed);
 
