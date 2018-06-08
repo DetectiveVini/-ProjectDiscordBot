@@ -2,6 +2,7 @@ exports.run = async(client , message ,args) =>{
     const Discord = require('discord.js')
     const config = require('../config.json');
     const roxo = config.roxo;
+    const fs = require('fs')
 
     if(!message.member.hasPermission("MANEGE_SERVER")) return message.channel.sendMessage('Você não pode fazer isso!');
     if(!args[0] == args['help']) return message.reply('Exemplo:m!prefix <escolha o prefixo aqui>');
