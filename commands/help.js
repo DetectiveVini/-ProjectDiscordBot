@@ -13,7 +13,7 @@ exports.run = (client  , message  , args) =>{
 //comando  = args[1]
 
 
-        if(agrs[1] === 'ban'){
+        if(args[1] === 'ban'){
             message.channel.sendMessage()
         }
     let HelpBanEmbed = new Discord.RichEmbed()
