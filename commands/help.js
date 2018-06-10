@@ -14,7 +14,7 @@ exports.run = (client  , message  , args) =>{
 
 
         if(args[1] === 'ban'){
-            message.channel.sendMessage()
+            message.channel.sendMessage(HelpBanEmbed)
         }
     let HelpBanEmbed = new Discord.RichEmbed()
     .setColor(red)
