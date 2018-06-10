@@ -18,7 +18,7 @@ exports.run = (client  , message  , args) =>{
         }
     let HelpBanEmbed = new Discord.RichEmbed()
     .setColor(red)
-    .setDescription(a)
+    .setDescription('a')
     .addField()
     .addField()
     .addField() 
