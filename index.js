@@ -13,13 +13,12 @@ client.on('guildMemberAdd', async member =>{
   CanalBemVindo.send(`Bem vindo ${member}!`)
 })
 //Prefix personalizado
-
 client.on('message' , async message =>{
 
 
   let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
 
-  if(!prefixes[mesaage.guild.id]){
+  if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
       prefixes:config.prefix
     }
@@ -28,13 +27,11 @@ client.on('message' , async message =>{
   console.log(prefix);
 
 })
-
 client.on('channelCreate',console.log)//CanalCriado
 client.on('channelDelete',console.log)//CanalDeletado
 //
 client.on('guildCreate',console.log)//Entrou no server
 client.on('guildDelete',console.log)//Saiu do server
-
 
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
@@ -44,14 +41,12 @@ fs.readdir("./events/", (err, files) => {
 client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
-
 client.on("message", message => {
 
   if(!message.guild) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(config.prefix)) return;
 //Anti-Comando errado
-
 let command = message.content.split(" ")[0];
 command = command.slice(config.prefix.length);
 //

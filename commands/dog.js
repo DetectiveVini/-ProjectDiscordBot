@@ -4,13 +4,13 @@ exports.run = async (client ,message , args) =>{
     const config = require('../config.json');
     const roxo = config.roxo;
     
-    let {body} =  superagent
+    let {body} = await superagent
         .get(`https://random.dog/woof.json`);
     
         let DogEmbed = new Discord.RichEmbed()
-        .setColor(roxo)
-        .setTitle('DOGGO')
-        .setImage(body.url);
+            .setColor(roxo)
+            .setTitle('DOGGO')
+            .setImage(body.url);
 
         message.channel.sendMessage(DogEmbed);
 
