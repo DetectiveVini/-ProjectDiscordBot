@@ -24,7 +24,7 @@ exports.run = (client  , message  , args) =>{
     .addField() 
     .addField();
 
-    break;
+    
 
     let HelpEmbed = new Discord.RichEmbed()
         .setColor(red)
