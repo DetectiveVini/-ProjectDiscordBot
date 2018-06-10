@@ -9,22 +9,8 @@ exports.run = (client  , message  , args) =>{
     let ServidoresParceiros = ['[Avengers Without Souls](https://discord.gg/MnaC3hJ)','[Ayumi - Discord Server!](https://discord.gg/Z2Bf4nB)'];
     let Github = ['[Myllena](https://github.com/DetectiveVini/Myllena)'];
     
-    //m!help comando
-//comando  = args[1]
 
 
-        if(args[1] === 'ban'){
-            message.channel.sendMessage(HelpBanEmbed)
-        }
-    let HelpBanEmbed = new Discord.RichEmbed()
-    .setColor(red)
-    .setDescription('a')
-    .addField()
-    .addField()
-    .addField() 
-    .addField();
-
-    
 
     let HelpEmbed = new Discord.RichEmbed()
         .setColor(red)
