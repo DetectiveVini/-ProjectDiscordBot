@@ -3,8 +3,8 @@ exports.run = async (client ,message , args) =>{
     const superagent = require("superagent");
     const config = require('../config.json');
     const roxo = config.roxo;
-
-    let {body} = await superagent
+    
+    let {body} =  superagent
         .get(`https://random.dog/woof.json`);
     
         let DogEmbed = new Discord.RichEmbed()
