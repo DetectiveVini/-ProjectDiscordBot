@@ -29,7 +29,7 @@ command = command.slice(config.prefix.length);
 let args = message.content.split(" ").slice(1);
 // 
 try {
-    let musiccommand = require(`./commands/music commands/${command}.js`)
+    
     let commandFile = require(`./commands/${command}.js`);//Importando os comandos da pasta commands
     musiccommand.run(client , message , args , ops);
     commandFile.run(client, message, args);
