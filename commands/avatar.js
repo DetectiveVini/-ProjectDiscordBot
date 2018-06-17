@@ -4,7 +4,7 @@ const config = require('../config.json');
 module.exports.run = (client , message , args) =>{
 let Autor = (message.author.username);
 let Image = (message.author.avatarURL);
-let user = (message.mention.users.first()|| message.author) ;
+let user = (message.mentions.users.first()|| message.author) ;
 let azul = config.azul;
 //Embed
    let AvatarEmbed = new Discord.RichEmbed()
