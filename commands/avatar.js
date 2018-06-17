@@ -10,7 +10,7 @@ let azul = config.azul;
    let AvatarEmbed = new Discord.RichEmbed()
     .setAuthor(Autor)
     .setColor(azul)
-    .setDescription(`[Clique aqui para baixar a imagem](${user.displayAvatarURL})`)
+    .setDescription(`[Clique aqui para baixar a imagem](${user.avatarURL})`)
     .setImage(Image);
     
     return message.channel.send(AvatarEmbed);
