@@ -1,10 +1,12 @@
 const Discord= require('discord.js');
 const config = require('../config.json');
+
+module.exports.run = (client , message , args) =>{
 let Autor = (message.author.username);
 let Image = (message.author.avatarURL);
 let user = (message.mention.users.first()|| message.author) ;
 let azul = config.azul;
-module.exports.run = (client , message , args) =>{
+//Embed
    let AvatarEmbed = new Discord.RichEmbed()
     .setAuthor(Autor)
     .setColor(azul)
