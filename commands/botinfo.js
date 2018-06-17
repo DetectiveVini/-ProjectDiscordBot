@@ -1,4 +1,3 @@
-
 module.exports.run = (client , message , args) =>{
     const Discord = require('discord.js');
     let bicon = client.user.displayAvatarURL;

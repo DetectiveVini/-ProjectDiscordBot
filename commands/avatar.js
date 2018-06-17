@@ -1,5 +1,19 @@
+const Discord= require('discord.js');
+const config = require('../config.json');
+let Autor = (message.author.username);
+let Image = (message.author.avatarURL);
+let user = (message.mention.users.first()|| message.author) ;
+let azul = config.azul;
 module.exports.run = (client , message , args) =>{
+   let AvatarEmbed = new Discord.RichEmbed()
+    .setAuthor(Autor)
+    .setColor(azul)
+    .setDescription(`Avatar do ${message.author.username}`)
+    .setImage(Image);
+    
+    return message.channel.send(AvatarEmbed)
 
+/*
     let user = message.mentions.users.first();
     let razaou = args.slice(0).join(' ');
 
@@ -76,6 +90,6 @@ module.exports.run = (client , message , args) =>{
             }
           });
     }
-
+*/
 } 
 //By : Muffy#0942
