@@ -6,27 +6,7 @@ const fs = require('fs')//Modulo
 client.on('ready', () => {
   console.log('Inicializado com sucesso');
 });
-client.on('guildMemberAdd', async member =>{
-  console.log(`${member.id} entrou no server!`);
 
-  let CanalBemVindo = message.guild.channels.find(`name` , 'bemvindo');
-  CanalBemVindo.send(`Bem vindo ${member}!`)
-})
-//Prefix personalizado
-client.on('message' , async message =>{
-
-
-  let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes:config.prefix
-    }
-  }
-  let prefix = prefixes[message.guild.id].prefixes;
-  console.log(prefix);
-
-})
 client.on('channelCreate',console.log)//CanalCriado
 client.on('channelDelete',console.log)//CanalDeletado
 //
