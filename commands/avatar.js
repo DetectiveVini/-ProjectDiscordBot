@@ -2,7 +2,7 @@ const Discord= require('discord.js');
 const config = require('../config.json');
 
 module.exports.run = (client , message , args) =>{
-let Autor = (message.author.username);
+let Autor = (user.username);
 let Image = (message.author.avatarURL);
 let user = (message.mentions.users.first()|| message.author) ;
 let azul = config.azul;
@@ -10,7 +10,7 @@ let azul = config.azul;
    let AvatarEmbed = new Discord.RichEmbed()
     .setAuthor(Autor)
     .setColor(azul)
-    .setDescription(`Avatar do ${message.author.username}`)
+    .setDescription(`[Clique aqui para baixar a imagem](${user.displayAvatarURL})`)
     .setImage(Image);
     
     return message.channel.send(AvatarEmbed);
