@@ -11,7 +11,7 @@ module.exports.run = (client , message , args) =>{
     .setDescription(`Avatar do ${message.author.username}`)
     .setImage(Image);
     
-    return message.channel.send(AvatarEmbed)
+    return message.channel.send(AvatarEmbed);
 
 /*
     let user = message.mentions.users.first();
