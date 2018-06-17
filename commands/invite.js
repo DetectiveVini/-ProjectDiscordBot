@@ -1,4 +1,4 @@
-exports.run= (client , message , args) =>{
+module.exports.run = (client , message , args) =>{
     const Discord = require('discord.js')
     //Incio do Embed
     let InviteEmbed = new Discord.RichEmbed()

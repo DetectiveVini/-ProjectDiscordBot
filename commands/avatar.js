@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+module.exports.run = (client , message , args) =>{
 
     let user = message.mentions.users.first();
     let razaou = args.slice(0).join(' ');

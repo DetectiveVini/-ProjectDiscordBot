@@ -7,12 +7,7 @@ client.on('ready', () => {
   console.log('Inicializado com sucesso');
 });
 
-client.on('channelCreate',console.log)//CanalCriado
-client.on('channelDelete',console.log)//CanalDeletado
-//
-client.on('guildCreate',console.log)//Entrou no server
-client.on('guildDelete',console.log)//Saiu do server
-
+/*
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -21,6 +16,7 @@ fs.readdir("./events/", (err, files) => {
 client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
+*/
 client.on("message", message => {
 
   if(!message.guild) return;

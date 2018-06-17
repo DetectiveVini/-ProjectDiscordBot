@@ -1,4 +1,4 @@
-exports.run = (client , message ,  args) =>{
+module.exports.run = (client , message , args) =>{
     
       if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Não.");
       if(!args[0]) return message.channel.send("não");

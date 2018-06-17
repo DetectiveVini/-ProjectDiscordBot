@@ -1,4 +1,4 @@
-exports.run = async (client , message , args) =>{
+module.exports.run = async (client , message , args) =>{
     const Discord = require('discord.js');
     const config = require('../config.json');
     const azul = config.azul;
