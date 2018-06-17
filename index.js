@@ -29,9 +29,7 @@ command = command.slice(config.prefix.length);
 let args = message.content.split(" ").slice(1);
 // 
 try {
-    
-    let commandFile = require(`./commands/${command}.js`);//Importando os comandos da pasta commands
-    
+    let commandFile = require(`./commands/${command}.js`);//Importando os comandos da pasta commands 
     commandFile.run(client, message, args);
   } catch (err) {
     console.error(err);
