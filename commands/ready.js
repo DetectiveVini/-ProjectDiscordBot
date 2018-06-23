@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config  = require('../config.json');
 const OwnerID = config.ownerID;
 const azul = config.azul;
-const ReadyMessage = args.join(" ")
+
 
 module.exports.run = async(client , message , args) =>{
     
