@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const config  = require('../config.json');
 const OwnerID = config.ownerID;
-const preto = config.preto;
+const azul = config.azul;
 const ReadyMessage = args.join(" ")
 
 module.exports.run = async(client , message , args) =>{
@@ -14,7 +14,7 @@ module.exports.run = async(client , message , args) =>{
         let NomeDoUsuario = (message.author.tag)
         let ReadyEmbed = new Discord.RichEmbed()
             .setAuthor(NomeDoUsuario)
-            .setColor(preto)
+            .setColor(azul)
             .setDescription('Ready modificado com Sucesso!')
             .addField('Modificado para:' , ModificandoOStatus);
 

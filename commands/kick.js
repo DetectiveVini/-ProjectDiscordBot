@@ -1,13 +1,16 @@
+const Discord =require('discord.js')
+const config = require('../config.json');
+const azul = config.azul;
 module.exports.run = (client , message , args) =>{
-    const Discord =require('discord.js')
+    
 var PermissaoKickReturn = new Discord.RichEmbed()
-.setColor('#4b42f4')
+.setColor(azul)
 .setDescription('Você não tem permissao para kickar :oncoming_police_car:')
 var MentionMemberReturn = new Discord.RichEmbed()
-.setColor('#4b42f4')
+.setColor(azul)
 .setDescription('Uso invalido. Por Favor faça como o seguinte exemplo:`m!kick @user#0000 `')
 var KickForUser = new Discord.RichEmbed()
-.setColor('#4b42f4')
+.setColor(azul)
 .setDescription(`Kickado por${message.author.tag}`)
 //Fim do embed
 

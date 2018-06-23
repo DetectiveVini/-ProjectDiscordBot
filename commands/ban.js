@@ -1,10 +1,12 @@
 module.exports.run = (client , message , args) =>{
-    const Discord = require('discord.js')
+    const Discord =require('discord.js')
+    const config = require('../config.json');
+    const azul = config.azul;
     var permissaoForBan = new Discord.RichEmbed()
-        .setColor('#4b42f4')
+        .setColor(azul)
         .setDescription(':oncoming_police_car: Você não tem permissao para banir :oncoming_police_car:')
     var UsoInvalido = new Discord.RichEmbed()
-        .setColor('#4b42f4')
+        .setColor(azul)
         .setDescription('Uso invalido. Por Favor faça como o seguinte exemplo:`m!ban @user#0000 <time>`')
     
     

@@ -1,7 +1,10 @@
 module.exports.run = (client , message , args) =>{
-    const Discord = require('discord.js');
+    const Discord =require('discord.js')
+    const config = require('../config.json');
+    const azul = config.azul;
+    
     var CriadorEmbed = new Discord.RichEmbed()
-            .setColor('#4b42f4')
+            .setColor(azul)
             .setDescription('Criador Vinni#3130')
 
 

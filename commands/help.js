@@ -3,7 +3,7 @@ module.exports.run = (client , message , args) =>{
     const config = require('../config.json')
 
 
-    const red =  config.vermelho;
+    const azul =  config.azul;
     let ComandosDeAdminitração = ['**Ban,Kick,Report,Clear,RemoveRole,AddRole**'];
     let ComandosComuns = ['**Avatar,BotInfo,Help,Invite,Ping,Say,ServerInfo**'];
     let ServidoresParceiros = ['[Avengers Without Souls](https://discord.gg/MnaC3hJ)','[Ayumi - Discord Server!](https://discord.gg/Z2Bf4nB)'];
@@ -13,7 +13,7 @@ module.exports.run = (client , message , args) =>{
 
 
     let HelpEmbed = new Discord.RichEmbed()
-        .setColor(red)
+        .setColor(azul)
         .setDescription('Comandos do Bot')
         .addField('Comandos de Administração', ComandosDeAdminitração)
         .addField('Comandos Comuns' , ComandosComuns)
